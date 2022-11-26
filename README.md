@@ -6,8 +6,7 @@
 <br/>
 
 ## Summary
-- [스프링 핵심 원리 - 기본편]() 
-  - 저작권을 위해 개인 노션에서 `private`으로 관리합니다. 필요시 권한을 요청하세요!
+- [스프링 핵심 원리 - 기본편](https://leedongyeop.notion.site/3c7508fdbafb4eecbf35860aed41cc06) 
 
 <br/>
 
