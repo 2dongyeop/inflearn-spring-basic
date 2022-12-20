@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.inject.Provider;
 
 import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -46,17 +47,16 @@ public class SingletonWithPrototypeTest1 {
     static class ClientBean {
 
         @Autowired
-        private ObjectProvider<PrototypeBean> prototypeBeanProvider;
+        private Provider<PrototypeBean> prototypeBeanProvider;
         //DL : Dependency Lookup - 의존관계 조회(탐색)
 
         public int logic() {
-            PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+            PrototypeBean prototypeBean = prototypeBeanProvider.get();
             prototypeBean.addCount();
 
             return prototypeBean.getCount();
         }
     }
-
 
     @Scope("prototype")
     static class PrototypeBean {
